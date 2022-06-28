@@ -1,0 +1,14 @@
+<h3>{{response.title}}</h3>
+<p>Genre: {{response.genre}}</p>
+<p>Plot: {{response.plot}}</p>
+<p>Cast:</p>
+<p>{{#each response.cast}}
+{{this.name}}</br>
+{{this.occupation}}</br>
+{{this.catchPhrase}}
+{{/each}}</p>
+<form action="/movies/{{response.id}}/edit" method="GET">
+    <button type="submit">Edit movie</button>
+</form>
+<form action="/movies/{{response.id}}/delete" method="POST">
+    <button type="submit">Delete movie</button>
